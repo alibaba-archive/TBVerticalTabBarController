@@ -59,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tabbarcontroller.setViewcontrollers([nav2, nav1, nav3])
         tabbarcontroller.setExtraButtons([item4,item5])
+        tabbarcontroller.delegate = self
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = tabbarcontroller
         self.window?.makeKeyAndVisible()
@@ -90,5 +91,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate: TBVerticalTabBarControllerDelegate {
+    func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectExtralButtonIndex: Int) {
+        
+    }
+    
+    func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectViewController viewController: UIViewController) {
+        
+    }
+    
+    func VerticalTabBarController(tabBarController: TBVerticalTabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+        return true
+    }
 }
 

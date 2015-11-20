@@ -59,7 +59,7 @@ class TBVerticalTabBar: UIView {
             let width: CGFloat = (tabBar.titleLabel?.bounds.size.width)!
             tabBar.imageEdgeInsets = UIEdgeInsetsMake(5,19,5,20)
             tabBar.titleEdgeInsets = UIEdgeInsetsMake(70, -width-39, 0, width)
-            tabBar.addTarget(self, action: Selector("tabBarTouch:"), forControlEvents: .TouchUpInside)
+            tabBar.addTarget(self, action: Selector("extraButtonTouch:"), forControlEvents: .TouchUpInside)
             extraButtonsContainer!.addSubview(tabBar)
         }
         
@@ -79,6 +79,13 @@ class TBVerticalTabBar: UIView {
             delegate?.tabBar(self, didSelectViewController: button.index)
         }
     }
+    
+    func extraButtonTouch(button: TBTabBarButton) {
+        if (delegate != nil) {
+            delegate?.tabBar(self, didSelectExtraButton: button.index)
+        }
+        
+    }
 
     func adjustTabBar() {
         self.frame =  CGRect(x: 0, y: 0, width: self.frame.size.width, height: UIScreen.mainScreen().bounds.height)
@@ -94,7 +101,7 @@ class TBVerticalTabBar: UIView {
     }
 }
 
-protocol TBVercicalTabBarProtocol {
+protocol TBVercicalTabBarProtocol: NSObjectProtocol {
     
     func tabBar(tabBar: TBVerticalTabBar, didSelectViewController selectedIndex: Int)
     
