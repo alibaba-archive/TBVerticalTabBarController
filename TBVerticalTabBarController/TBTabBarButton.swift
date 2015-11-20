@@ -33,7 +33,6 @@ class TBTabBarButton: UIButton {
     func commonInit() {
         self.setTitleColor(UIColor(red: 28/255.0, green: 136/255.0, blue: 1, alpha: 1), forState: .Selected)
         self.setTitleColor(UIColor.grayColor(), forState: .Normal)
-        
         setSelect(false)
     }
     

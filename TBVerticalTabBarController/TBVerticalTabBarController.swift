@@ -8,24 +8,27 @@
 
 import UIKit
 
-class TBVerticalTabBarController: UIViewController, switchTabBarProtocol {
 
-    private let tabbarWidth: CGFloat = 78.0
+struct TBVerticalConstant {
+    static let tabBarWidth: CGFloat = 78.0
+    
+}
+
+class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
     
     var containerView: UIView?
     var tabBar: TBVerticalTabBar?
     var selectedViewController: UIViewController?
     var selectedIndex: Int?
     var viewControllers:[UIViewController]?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
-    
     func initTabBar() {
-        tabBar = TBVerticalTabBar(frame: CGRect(x: 0, y: 0, width: tabbarWidth, height: UIScreen.mainScreen().bounds.height))
+        tabBar = TBVerticalTabBar(frame: CGRect(x: 0, y: 0, width: TBVerticalConstant.tabBarWidth, height: UIScreen.mainScreen().bounds.height))
         tabBar?.delegate = self
         tabBar?.setItemArray(self.viewControllers!)
         self.view.addSubview(tabBar!)
@@ -33,13 +36,13 @@ class TBVerticalTabBarController: UIViewController, switchTabBarProtocol {
     
     private var containerFrame: CGRect {
         get {
-            return CGRect(x: tabbarWidth, y: 0, width: UIScreen.mainScreen().bounds.width - tabbarWidth, height: UIScreen.mainScreen().bounds.height)
+            return CGRect(x: TBVerticalConstant.tabBarWidth, y: 0, width: UIScreen.mainScreen().bounds.width - TBVerticalConstant.tabBarWidth, height: UIScreen.mainScreen().bounds.height)
         }
     }
     
     private var containerSize: CGSize {
         get {
-            return CGSize(width: UIScreen.mainScreen().bounds.width - tabbarWidth, height: UIScreen.mainScreen().bounds.height)
+            return CGSize(width: UIScreen.mainScreen().bounds.width - TBVerticalConstant.tabBarWidth, height: UIScreen.mainScreen().bounds.height)
         }
     }
     
@@ -54,6 +57,10 @@ class TBVerticalTabBarController: UIViewController, switchTabBarProtocol {
         self.selectedViewController?.view.frame.size = containerSize
         self.containerView!.addSubview(selectedViewController!.view)
         tabBar?.setSelectIndex(self.selectedIndex!)
+    }
+    
+    func setExtraButtons(buttons: [TBTabBarItem]) {
+        self.tabBar?.setExtraButtons(buttons)
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,8 +90,11 @@ extension TBVerticalTabBarController {
 }
 
 extension TBVerticalTabBarController {
-    func didChangeViewController(selectedIndex: Int) {
+    func tabBar(tabBar: TBVerticalTabBar, didSelectExtraButton selectedIndex: Int) {
         
+    }
+    
+    func tabBar(tabBar: TBVerticalTabBar, didSelectViewController selectedIndex: Int) {
         self.addChildViewController(self.viewControllers![selectedIndex])
         self.selectedViewController?.view.removeFromSuperview()
         self.selectedViewController = self.viewControllers![selectedIndex]
@@ -93,6 +103,10 @@ extension TBVerticalTabBarController {
     }
 }
 
-protocol TBVerticalTabBarControllerDelegate {
+protocol TBVerticalTabBarControllerDelegate: NSObjectProtocol {
+    
+    func VerticalTabBarController(tabBarController: TBVerticalTabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
+    
+    func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectViewController viewController: UIViewController)
     
 }

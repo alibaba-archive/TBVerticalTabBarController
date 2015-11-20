@@ -35,16 +35,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let nav3:UISplitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav3") as! UISplitViewController
         nav3.preferredDisplayMode = .AllVisible
         
+        let nav4:UISplitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav3") as! UISplitViewController
+        nav4.preferredDisplayMode = .AllVisible
         
-        let item1 = UITabBarItem(title: "哈哈", image: UIImage(named: "dialog"), tag: 0)
+        let nav5:UISplitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav3") as! UISplitViewController
+        nav5.preferredDisplayMode = .AllVisible
+        
+        
+        let item1 = TBTabBarItem(title: "哈哈", image: UIImage(named: "dialog"), tag: 0)
         nav1.tabBarItem = item1
-        let item2 = UITabBarItem(title: "我的", image: UIImage(named: "user"), tag: 0)
+        let item2 = TBTabBarItem(title: "我的", image: UIImage(named: "user"), tag: 0)
         nav2.tabBarItem = item2
-        let item3 = UITabBarItem(title: "我的", image: UIImage(named: "message"), tag: 0)
+        let item3 = TBTabBarItem(title: "我的", image: UIImage(named: "message"), tag: 0)
         nav3.tabBarItem = item3
         
-        tabbarcontroller.setViewcontrollers([nav2, nav1,nav3])
+        let item4 = TBTabBarItem(title: nil, image: UIImage(named: "add"), tag: 0)
+        item4.position = .Bottom
+        nav4.tabBarItem = item4
         
+        let item5 = TBTabBarItem(title: nil, image: UIImage(named: "setting"), tag: 0)
+        item5.position = .Bottom
+        nav5.tabBarItem = item5
+        
+        tabbarcontroller.setViewcontrollers([nav2, nav1, nav3])
+        tabbarcontroller.setExtraButtons([item4,item5])
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = tabbarcontroller
         self.window?.makeKeyAndVisible()

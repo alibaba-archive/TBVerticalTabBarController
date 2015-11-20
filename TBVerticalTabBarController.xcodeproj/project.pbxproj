@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E52B84AD1BFE2A38001F88AD /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52B84AC1BFE2A38001F88AD /* CollectionViewController.swift */; };
+		E52B84CF1BFEF4AF001F88AD /* TBTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52B84CE1BFEF4AF001F88AD /* TBTabBarItem.swift */; };
 		E5A015641BFC2126008C0E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A015631BFC2126008C0E6C /* AppDelegate.swift */; };
 		E5A015661BFC2126008C0E6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A015651BFC2126008C0E6C /* ViewController.swift */; };
 		E5A015691BFC2126008C0E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A015671BFC2126008C0E6C /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		E52B84AC1BFE2A38001F88AD /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		E52B84CE1BFEF4AF001F88AD /* TBTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTabBarItem.swift; sourceTree = "<group>"; };
 		E5A015601BFC2126008C0E6C /* TBVerticalTabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBVerticalTabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5A015631BFC2126008C0E6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5A015651BFC2126008C0E6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				E5A015761BFC2182008C0E6C /* TBVerticalTabBarController.swift */,
 				E5A015781BFC2686008C0E6C /* TBVerticalTabBar.swift */,
 				E5A0159D1BFC7FA3008C0E6C /* TBTabBarButton.swift */,
+				E52B84CE1BFEF4AF001F88AD /* TBTabBarItem.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				E5A0159E1BFC7FA3008C0E6C /* TBTabBarButton.swift in Sources */,
 				E5A015771BFC2182008C0E6C /* TBVerticalTabBarController.swift in Sources */,
 				E5A015641BFC2126008C0E6C /* AppDelegate.swift in Sources */,
+				E52B84CF1BFEF4AF001F88AD /* TBTabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
