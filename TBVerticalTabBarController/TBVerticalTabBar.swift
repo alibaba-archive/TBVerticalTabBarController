@@ -84,7 +84,6 @@ class TBVerticalTabBar: UIView {
         if (delegate != nil) {
             delegate?.tabBar(self, didSelectExtraButton: button.index)
         }
-        
     }
 
     func adjustTabBar() {
@@ -106,7 +105,5 @@ protocol TBVercicalTabBarProtocol: NSObjectProtocol {
     func tabBar(tabBar: TBVerticalTabBar, didSelectViewController selectedIndex: Int)
     
     func tabBar(tabBar: TBVerticalTabBar, didSelectExtraButton selectedIndex: Int)
-    
-    
 }
 

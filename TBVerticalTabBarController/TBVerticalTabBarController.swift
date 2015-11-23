@@ -111,7 +111,7 @@ extension TBVerticalTabBarController {
 
 extension TBVerticalTabBarController {
     func tabBar(tabBar: TBVerticalTabBar, didSelectExtraButton selectedIndex: Int) {
-        
+        self.delegate?.VerticalTabBarController(self, didSelectExtralButtonIndex: selectedIndex)
     }
     
     func tabBar(tabBar: TBVerticalTabBar, didSelectViewController selectedIndex: Int) {

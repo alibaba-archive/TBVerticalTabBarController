@@ -64,7 +64,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabbarcontroller
         self.window?.makeKeyAndVisible()
         
-
         return true
     }
 
@@ -90,12 +89,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
 
 extension AppDelegate: TBVerticalTabBarControllerDelegate {
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectExtralButtonIndex: Int) {
+        let setting = SettingViewController()
         
+        let nav = UINavigationController(rootViewController: setting)
+        nav.modalPresentationStyle = .FormSheet
+        self.window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
     }
     
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectViewController viewController: UIViewController) {
