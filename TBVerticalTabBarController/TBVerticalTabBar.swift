@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TBVerticalTabBar: UIView {
+public class TBVerticalTabBar: UIView {
 
     private var extraButtonsContainer: UIView = UIView()
     var selectedIndex: Int = 0
@@ -20,7 +20,7 @@ class TBVerticalTabBar: UIView {
         self.backgroundColor = UIColor.whiteColor()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -30,7 +30,7 @@ class TBVerticalTabBar: UIView {
         var buttonIndex = 0
         for i in 0..<tabBarItems.count {
             let item: TBTabBarItem = tabBarItems[i] as! TBTabBarItem
-            let frame: CGRect = CGRect(x: 0.0, y: 20.0 + 78.0 * Double(i), width: 78, height: 78)
+            let frame: CGRect = CGRect(x: 0.0, y: TBVC.tabBarPaddingDouble + TBVC.tabBarWidthDouble * Double(i), width: TBVC.tabBarWidthDouble, height: TBVC.tabBarWidthDouble)
             let tabBar = TBTabBarButton(frame: frame, index: buttonIndex++)
             tabBar.setTitle(item.title, forState: .Normal)
             tabBar.setImage(item.image, forState: .Normal)
@@ -45,7 +45,7 @@ class TBVerticalTabBar: UIView {
     }
     
     func setExtraButtons(buttons: Array<TBTabBarItem>) {
-        extraButtonsContainer.frame = CGRect(x: 0.0, y: Double(UIScreen.mainScreen().bounds.height) - Double(78 * buttons.count) - 30.0, width: 78.0, height: Double(78 * buttons.count))
+        extraButtonsContainer.frame = CGRect(x: 0.0, y: TBVC.HeightDouble - TBVC.tabBarWidthDouble * Double(buttons.count) - 30.0, width: TBVC.tabBarWidthDouble, height: TBVC.tabBarWidthDouble * Double(buttons.count))
         self.addSubview(extraButtonsContainer)
         var buttonIndex = 0
         for i in 0..<buttons.count {
@@ -93,25 +93,34 @@ class TBVerticalTabBar: UIView {
             delegate?.tabBar(self, didSelectExtraButton: button.index)
         }
     }
-
-    func adjustTabBar() {
-        self.frame =  CGRect(x: 0, y: 0, width: self.frame.size.width, height: UIScreen.mainScreen().bounds.height)
-    }
     
-    override func drawRect(rect: CGRect) {
-
+    override public func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         CGContextSetRGBStrokeColor(context, 0.8, 0.8, 0.8, 1)
-        CGContextMoveToPoint(context, 78, 0)
-        CGContextAddLineToPoint(context, 78, UIScreen.mainScreen().bounds.height)
+        CGContextMoveToPoint(context, TBVC.tabBarWidth, 0)
+        CGContextAddLineToPoint(context, TBVC.tabBarWidth, TBVC.Height)
         CGContextStrokePath(context)
     }
 }
 
 protocol TBVercicalTabBarProtocol: NSObjectProtocol {
     
+    /**
+     will called after click the button and tell tabBarController to change
+     the view controller by index
+     
+     - parameter tabBar:        vertical tabBar
+     - parameter selectedIndex: the index the click
+     */
     func tabBar(tabBar: TBVerticalTabBar, didSelectViewController selectedIndex: Int)
     
+    /**
+     will called after click the bottom buttons and tell the delegate to do 
+     something if they want
+     
+     - parameter tabBar:        vertical
+     - parameter selectedIndex: the extralButton index
+     */
     func tabBar(tabBar: TBVerticalTabBar, didSelectExtraButton selectedIndex: Int)
 }
 

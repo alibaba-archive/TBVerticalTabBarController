@@ -11,12 +11,19 @@ import UIKit
 
 struct TBVC {
     static let tabBarWidth: CGFloat = 78.0
-    static let mainWidth: CGFloat = UIScreen.mainScreen().bounds.size.width
-    static let mainHeight: CGFloat = UIScreen.mainScreen().bounds.size.height
+    static let tabBarPadding: CGFloat = 20.0
+    static let tabBarWidthDouble: Double = 78.0
+    static let tabBarPaddingDouble: Double = 20.0
+    static let Width: CGFloat = UIScreen.mainScreen().bounds.size.width
+    static let Height: CGFloat = UIScreen.mainScreen().bounds.size.height
+    static let WidthDouble: Double = Double(UIScreen.mainScreen().bounds.size.width)
+    static let HeightDouble: Double = Double(UIScreen.mainScreen().bounds.size.height)
 }
 
-class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
+
+public class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
     
+    // MARK: - var
     lazy var containerView: UIView = {
         return self.initContainer()
     }()
@@ -26,14 +33,14 @@ class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
     var viewControllers: [UIViewController]?
     var delegate: TBVerticalTabBarControllerDelegate?
     
-    override func viewDidLoad() {
+    // MARK: - Function
+    override public func viewDidLoad() {
         super.viewDidLoad()
         commonInit()
     }
     
     func commonInit() {
         initTabBar()
-//        initContainer()
     }
     
     func initTabBar() {
@@ -41,13 +48,9 @@ class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
         self.view.addSubview(tabBar)
         tabBar.translatesAutoresizingMaskIntoConstraints = false
         let topConstraints = NSLayoutConstraint(item: tabBar, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 0)
-        
         let leftConstraints = NSLayoutConstraint(item: tabBar, attribute: .Left, relatedBy: .Equal, toItem: self.view, attribute: .Left, multiplier: 1, constant: 0)
-        
         let bottomConstraints = NSLayoutConstraint(item: tabBar, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1, constant: 0)
-        
         let widthConstraints = NSLayoutConstraint(item: tabBar, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant: TBVC.tabBarWidth)
-        
         self.view?.addConstraints([topConstraints,leftConstraints,bottomConstraints])
         tabBar.addConstraint(widthConstraints)
     }
@@ -57,13 +60,9 @@ class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
         containerView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        
         let topConstraints = NSLayoutConstraint(item: containerView, attribute: .Top, relatedBy: .Equal, toItem: self.view, attribute: .Top, multiplier: 1, constant: 0)
-        
         let leftConstraints = NSLayoutConstraint(item: containerView, attribute: .Left, relatedBy: .Equal, toItem: self.tabBar, attribute: .Right, multiplier: 1, constant: 0)
-        
         let bottomConstraints = NSLayoutConstraint(item: containerView, attribute: .Bottom, relatedBy: .Equal, toItem: self.view, attribute: .Bottom, multiplier: 1, constant: 0)
-        
         let rightConstraints = NSLayoutConstraint(item: containerView, attribute: .Right, relatedBy: .Equal, toItem: self.view, attribute: .Right, multiplier: 1, constant: 0)
         self.view.addConstraints([topConstraints,leftConstraints,rightConstraints,bottomConstraints])
         return containerView
@@ -87,53 +86,23 @@ class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
         v.layoutIfNeeded()
     }
     
-    override func viewWillLayoutSubviews() {
-        
-    }
-    
-    func setExtraButtons(buttons: [TBTabBarItem]) {
+    public func setExtraButtons(buttons: [TBTabBarItem]) {
         self.tabBar.setExtraButtons(buttons)
     }
     
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
+// MARK: - Rotate
 extension TBVerticalTabBarController {
-    private var containerFrame: CGRect {
-        get {
-            return CGRect(x: TBVC.tabBarWidth, y: 0, width: TBVC.mainWidth - TBVC.tabBarWidth, height: TBVC.mainHeight)
-        }
-    }
-    
-    private var containerSize: CGSize {
-        get {
-            return CGSize(width: TBVC.mainWidth - TBVC.tabBarWidth, height: TBVC.mainHeight)
-        }
+    override public func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        
     }
 }
 
-extension TBVerticalTabBarController {
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        tabBar.adjustTabBar()
-        self.containerView.frame = containerFrame
-    }
-}
-
+// MARK: - TabBar Delegate
 extension TBVerticalTabBarController {
     func tabBar(tabBar: TBVerticalTabBar, didSelectExtraButton selectedIndex: Int) {
         self.delegate?.VerticalTabBarController(self, didSelectExtralButtonIndex: selectedIndex)
@@ -154,6 +123,7 @@ extension TBVerticalTabBarController {
     }
 }
 
+// MARK: - TBVerticalTabBarControllerDelegate
 protocol TBVerticalTabBarControllerDelegate: NSObjectProtocol {
     
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
@@ -161,5 +131,4 @@ protocol TBVerticalTabBarControllerDelegate: NSObjectProtocol {
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectViewController viewController: UIViewController)
     
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectExtralButtonIndex: Int)
-    
 }

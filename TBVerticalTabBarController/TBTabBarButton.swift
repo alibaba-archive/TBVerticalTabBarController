@@ -11,13 +11,6 @@ import UIKit
 class TBTabBarButton: UIButton {
 
     var index: Int
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
     
     override init(frame: CGRect) {
         index = 0
@@ -37,7 +30,6 @@ class TBTabBarButton: UIButton {
     }
     
     func setSelect(isSelected: Bool) {
-        
         if isSelected {
             self.tintColor = UIColor(red: 28/255.0, green: 136/255.0, blue: 1, alpha: 1)
             self.selected = true
@@ -45,7 +37,6 @@ class TBTabBarButton: UIButton {
             self.tintColor = UIColor.grayColor()
             self.selected = false
         }
-        
     }
 
     required init?(coder aDecoder: NSCoder) {

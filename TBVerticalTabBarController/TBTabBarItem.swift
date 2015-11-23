@@ -7,12 +7,7 @@
 //
 
 import UIKit
-enum TabBarPosition {
-    case Top
-    case Bottom
-}
 
-class TBTabBarItem: UITabBarItem {
-    var position: TabBarPosition = .Top
+public class TBTabBarItem: UITabBarItem {
     
 }

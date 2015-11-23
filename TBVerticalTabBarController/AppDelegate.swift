@@ -48,11 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         nav3.tabBarItem = item3
         
         let item4 = TBTabBarItem(title: nil, image: UIImage(named: "add"), tag: 0)
-        item4.position = .Bottom
         nav4.tabBarItem = item4
         
         let item5 = TBTabBarItem(title: nil, image: UIImage(named: "setting"), tag: 0)
-        item5.position = .Bottom
         nav5.tabBarItem = item5
         
         tabbarcontroller.setViewcontrollers([nav1, nav2, nav3])
