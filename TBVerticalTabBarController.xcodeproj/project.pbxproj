@@ -18,6 +18,7 @@
 		E5A015791BFC2686008C0E6C /* TBVerticalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A015781BFC2686008C0E6C /* TBVerticalTabBar.swift */; };
 		E5A0159E1BFC7FA3008C0E6C /* TBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A0159D1BFC7FA3008C0E6C /* TBTabBarButton.swift */; };
 		E5D2AC981C02AE9B005C48E8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2AC971C02AE9B005C48E8 /* SettingViewController.swift */; };
+		E5D2AC9A1C030923005C48E8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2AC991C030923005C48E8 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		E5A015781BFC2686008C0E6C /* TBVerticalTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBVerticalTabBar.swift; sourceTree = "<group>"; };
 		E5A0159D1BFC7FA3008C0E6C /* TBTabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTabBarButton.swift; sourceTree = "<group>"; };
 		E5D2AC971C02AE9B005C48E8 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		E5D2AC991C030923005C48E8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				E5A015631BFC2126008C0E6C /* AppDelegate.swift */,
 				E5A015651BFC2126008C0E6C /* ViewController.swift */,
 				E52B84AC1BFE2A38001F88AD /* CollectionViewController.swift */,
+				E5D2AC991C030923005C48E8 /* TableViewController.swift */,
 				E5D2AC971C02AE9B005C48E8 /* SettingViewController.swift */,
 				E5A015671BFC2126008C0E6C /* Main.storyboard */,
 				E5A0156A1BFC2126008C0E6C /* Assets.xcassets */,
@@ -168,6 +171,7 @@
 				E5A0159E1BFC7FA3008C0E6C /* TBTabBarButton.swift in Sources */,
 				E5A015771BFC2182008C0E6C /* TBVerticalTabBarController.swift in Sources */,
 				E5A015641BFC2126008C0E6C /* AppDelegate.swift in Sources */,
+				E5D2AC9A1C030923005C48E8 /* TableViewController.swift in Sources */,
 				E52B84CF1BFEF4AF001F88AD /* TBTabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -65,7 +65,6 @@ public class TBVerticalTabBar: UIView {
         let constrainerBottom = NSLayoutConstraint(item: extraButtonsContainer, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
         let constrainerLeft = NSLayoutConstraint(item: extraButtonsContainer, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0)
         let constrainerRight = NSLayoutConstraint(item: extraButtonsContainer, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0)
-        
         let constrainerHeight = NSLayoutConstraint(item: extraButtonsContainer, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant:CGFloat(78 * buttons.count)+30)
         self.addConstraints([constrainerLeft, constrainerBottom, constrainerRight])
         extraButtonsContainer.addConstraint(constrainerHeight)
