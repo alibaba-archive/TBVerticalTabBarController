@@ -26,8 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabbarcontroller: TBVerticalTabBarController = TBVerticalTabBarController()
         
-        
-        
         let nav1:UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav1") as! UINavigationController
         
         let nav2:UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav2") as! UINavigationController

@@ -17,7 +17,9 @@ struct TBVC {
 
 class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
     
-    var containerView: UIView = UIView()
+    lazy var containerView: UIView = {
+        return self.initContainer()
+    }()
     var tabBar: TBVerticalTabBar = TBVerticalTabBar()
     var selectedViewController: UIViewController?
     var selectedIndex: Int?
@@ -31,7 +33,7 @@ class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
     
     func commonInit() {
         initTabBar()
-        initContainer()
+//        initContainer()
     }
     
     func initTabBar() {
@@ -50,8 +52,8 @@ class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
         tabBar.addConstraint(widthConstraints)
     }
     
-    func initContainer() {
-        containerView = UIView()
+    func initContainer() -> UIView {
+        let containerView = UIView()
         containerView.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(containerView)
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -64,25 +66,23 @@ class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
         
         let rightConstraints = NSLayoutConstraint(item: containerView, attribute: .Right, relatedBy: .Equal, toItem: self.view, attribute: .Right, multiplier: 1, constant: 0)
         self.view.addConstraints([topConstraints,leftConstraints,rightConstraints,bottomConstraints])
+        return containerView
     }
     
     func setViewcontrollers(views: [UIViewController]) {
-        
-        self.viewControllers = views
+        viewControllers = views
         tabBar.setItemArray(self.viewControllers!)
-        self.selectedIndex = 0
-        self.selectedViewController = views[0]
-//        self.selectedViewController?.view.frame.size = containerSize
-        
+        selectedIndex = 0
+        selectedViewController = views[0]        
         let v = selectedViewController!.view
-        self.containerView.addSubview(v)
+        containerView.addSubview(v)
         v.translatesAutoresizingMaskIntoConstraints = false
-        let containnerV = NSLayoutConstraint(item: v, attribute: .Width, relatedBy: .Equal, toItem: containerView, attribute: .Width, multiplier: 1, constant: 0)
-        let containnerH = NSLayoutConstraint(item: v, attribute: .Height, relatedBy: .Equal, toItem: containerView, attribute: .Height, multiplier: 1, constant: 0)
         let containerTop = NSLayoutConstraint(item: v, attribute: .Top, relatedBy: .Equal, toItem: containerView, attribute: .Top, multiplier: 1, constant: 0)
         let containerLeft = NSLayoutConstraint(item: v, attribute: .Left, relatedBy: .Equal, toItem: containerView, attribute: .Left, multiplier: 1, constant: 0)
+        let containerBottom = NSLayoutConstraint(item: v, attribute: .Bottom, relatedBy: .Equal, toItem: containerView, attribute: .Bottom, multiplier: 1, constant: 0)
+        let containerRight = NSLayoutConstraint(item: v, attribute: .Right, relatedBy: .Equal, toItem: containerView, attribute: .Right, multiplier: 1, constant: 0)
         
-        containerView.addConstraints([containnerH,containnerV,containerTop, containerLeft])
+        containerView.addConstraints([containerRight,containerBottom,containerTop, containerLeft])
         tabBar.setSelectIndex(self.selectedIndex!)
         v.layoutIfNeeded()
     }
@@ -143,8 +143,14 @@ extension TBVerticalTabBarController {
         self.addChildViewController(self.viewControllers![selectedIndex])
         self.selectedViewController?.view.removeFromSuperview()
         self.selectedViewController = self.viewControllers![selectedIndex]
-        self.selectedViewController?.view.frame.size = self.containerSize
-        self.containerView.addSubview((self.selectedViewController?.view)!)
+        let v = selectedViewController!.view
+        v.translatesAutoresizingMaskIntoConstraints = false
+        let containerTop = NSLayoutConstraint(item: v, attribute: .Top, relatedBy: .Equal, toItem: containerView, attribute: .Top, multiplier: 1, constant: 0)
+        let containerLeft = NSLayoutConstraint(item: v, attribute: .Left, relatedBy: .Equal, toItem: containerView, attribute: .Left, multiplier: 1, constant: 0)
+        let containerBottom = NSLayoutConstraint(item: v, attribute: .Bottom, relatedBy: .Equal, toItem: containerView, attribute: .Bottom, multiplier: 1, constant: 0)
+        let containerRight = NSLayoutConstraint(item: v, attribute: .Right, relatedBy: .Equal, toItem: containerView, attribute: .Right, multiplier: 1, constant: 0)
+        self.containerView.addSubview(v)
+        containerView.addConstraints([containerRight,containerBottom,containerTop, containerLeft])
     }
 }
 
