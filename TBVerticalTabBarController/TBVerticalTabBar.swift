@@ -10,8 +10,7 @@ import UIKit
 
 class TBVerticalTabBar: UIView {
 
-    private var extraButtonsContainer: UIView?
-    
+    private var extraButtonsContainer: UIView = UIView()
     var selectedIndex: Int = 0
     var itemsArray: Array<TBTabBarButton> = []
     var delegate: TBVercicalTabBarProtocol?
@@ -46,8 +45,8 @@ class TBVerticalTabBar: UIView {
     }
     
     func setExtraButtons(buttons: Array<TBTabBarItem>) {
-        extraButtonsContainer = UIView(frame: CGRect(x: 0.0, y: Double(UIScreen.mainScreen().bounds.height) - Double(78 * buttons.count) - 30.0, width: 78.0, height: Double(78 * buttons.count)))
-        self.addSubview(extraButtonsContainer!)
+        extraButtonsContainer.frame = CGRect(x: 0.0, y: Double(UIScreen.mainScreen().bounds.height) - Double(78 * buttons.count) - 30.0, width: 78.0, height: Double(78 * buttons.count))
+        self.addSubview(extraButtonsContainer)
         var buttonIndex = 0
         for i in 0..<buttons.count {
             let item: TBTabBarItem = buttons[i]
@@ -60,8 +59,17 @@ class TBVerticalTabBar: UIView {
             tabBar.imageEdgeInsets = UIEdgeInsetsMake(5,19,5,20)
             tabBar.titleEdgeInsets = UIEdgeInsetsMake(70, -width-39, 0, width)
             tabBar.addTarget(self, action: Selector("extraButtonTouch:"), forControlEvents: .TouchUpInside)
-            extraButtonsContainer!.addSubview(tabBar)
+            extraButtonsContainer.addSubview(tabBar)
         }
+        extraButtonsContainer.translatesAutoresizingMaskIntoConstraints = false
+        let constrainerBottom = NSLayoutConstraint(item: extraButtonsContainer, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
+        let constrainerLeft = NSLayoutConstraint(item: extraButtonsContainer, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0)
+        let constrainerRight = NSLayoutConstraint(item: extraButtonsContainer, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0)
+        
+        let constrainerHeight = NSLayoutConstraint(item: extraButtonsContainer, attribute: .Height, relatedBy: .Equal, toItem: nil, attribute: .NotAnAttribute, multiplier: 1, constant:CGFloat(78 * buttons.count)+30)
+        self.addConstraints([constrainerLeft, constrainerBottom, constrainerRight])
+        extraButtonsContainer.addConstraint(constrainerHeight)
+        extraButtonsContainer.layoutIfNeeded()
         
     }
     

@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         item5.position = .Bottom
         nav5.tabBarItem = item5
         
-        tabbarcontroller.setViewcontrollers([nav2, nav1, nav3])
+        tabbarcontroller.setViewcontrollers([nav1, nav2, nav3])
         tabbarcontroller.setExtraButtons([item4,item5])
         tabbarcontroller.delegate = self
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
