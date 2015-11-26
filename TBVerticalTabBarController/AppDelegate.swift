@@ -12,54 +12,33 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        
-//        let tabbarcontroller: UITabBarController = UITabBarController()
-//        tabbarcontroller.viewControllers = [ViewController()]
-//        
-//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        self.window?.rootViewController = tabbarcontroller
-//        self.window?.makeKeyAndVisible()
-        
         let tabbarcontroller: TBVerticalTabBarController = TBVerticalTabBarController()
-        
-        let nav1:UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav1") as! UINavigationController
-        
-        let nav2:UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav2") as! UINavigationController
-        
-        let nav3:UISplitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav3") as! UISplitViewController
+        // swiftlint:disable force_cast
+        let nav1: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav1") as! UINavigationController
+        let nav2: UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav2") as! UINavigationController
+        let nav3: UISplitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav3") as! UISplitViewController
         nav3.preferredDisplayMode = .AllVisible
-        
-        let nav4:UISplitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav3") as! UISplitViewController
+        let nav4: UISplitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav3") as! UISplitViewController
         nav4.preferredDisplayMode = .AllVisible
-        
-        let nav5:UISplitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav3") as! UISplitViewController
+        let nav5: UISplitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Nav3") as! UISplitViewController
         nav5.preferredDisplayMode = .AllVisible
-        
-        
         let item1 = TBTabBarItem(title: "哈哈", image: UIImage(named: "dialog"), tag: 0)
         nav1.tabBarItem = item1
         let item2 = TBTabBarItem(title: "我的", image: UIImage(named: "user"), tag: 0)
         nav2.tabBarItem = item2
         let item3 = TBTabBarItem(title: "我的", image: UIImage(named: "message"), tag: 0)
         nav3.tabBarItem = item3
-        
         let item4 = TBTabBarItem(title: nil, image: UIImage(named: "add"), tag: 0)
         nav4.tabBarItem = item4
-        
         let item5 = TBTabBarItem(title: nil, image: UIImage(named: "setting"), tag: 0)
         nav5.tabBarItem = item5
-        
         tabbarcontroller.setViewcontrollers([nav1, nav2, nav3])
         tabbarcontroller.setExtraButtons([item4,item5])
         tabbarcontroller.delegate = self
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = tabbarcontroller
         self.window?.makeKeyAndVisible()
-        
         return true
     }
 
@@ -88,20 +67,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: TBVerticalTabBarControllerDelegate {
+
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectExtralButtonIndex: Int) {
         let setting = SettingViewController()
-        
         let nav = UINavigationController(rootViewController: setting)
         nav.modalPresentationStyle = .FormSheet
         self.window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
     }
-    
+
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectViewController viewController: UIViewController) {
-        
     }
-    
+
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         return true
     }
 }
-

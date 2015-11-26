@@ -8,21 +8,18 @@
 
 import UIKit
 
-
 struct TBVC {
     static let tabBarWidth: CGFloat = 78.0
     static let tabBarPadding: CGFloat = 20.0
     static let tabBarWidthDouble: Double = 78.0
     static let tabBarPaddingDouble: Double = 20.0
-    static let Width: CGFloat = UIScreen.mainScreen().bounds.size.width
-    static let Height: CGFloat = UIScreen.mainScreen().bounds.size.height
-    static let WidthDouble: Double = Double(UIScreen.mainScreen().bounds.size.width)
-    static let HeightDouble: Double = Double(UIScreen.mainScreen().bounds.size.height)
+    static let width: CGFloat = UIScreen.mainScreen().bounds.size.width
+    static let height: CGFloat = UIScreen.mainScreen().bounds.size.height
+    static let widthDouble: Double = Double(UIScreen.mainScreen().bounds.size.width)
+    static let heightDouble: Double = Double(UIScreen.mainScreen().bounds.size.height)
 }
 
-
 public class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProtocol {
-    
     // MARK: - var
     lazy var containerView: UIView = {
         return self.initContainer()
@@ -32,17 +29,17 @@ public class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProto
     var selectedIndex: Int?
     var viewControllers: [UIViewController]?
     var delegate: TBVerticalTabBarControllerDelegate?
-    
+
     // MARK: - Function
     override public func viewDidLoad() {
         super.viewDidLoad()
         commonInit()
     }
-    
+
     func commonInit() {
         initTabBar()
     }
-    
+
     func initTabBar() {
         tabBar.delegate = self
         self.view.addSubview(tabBar)
@@ -54,7 +51,7 @@ public class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProto
         self.view?.addConstraints([topConstraints,leftConstraints,bottomConstraints])
         tabBar.addConstraint(widthConstraints)
     }
-    
+
     func initContainer() -> UIView {
         let containerView = UIView()
         containerView.backgroundColor = UIColor.whiteColor()
@@ -67,12 +64,12 @@ public class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProto
         self.view.addConstraints([topConstraints,leftConstraints,rightConstraints,bottomConstraints])
         return containerView
     }
-    
+
     func setViewcontrollers(views: [UIViewController]) {
         viewControllers = views
         tabBar.setItemArray(self.viewControllers!)
         selectedIndex = 0
-        selectedViewController = views[0]        
+        selectedViewController = views[0]
         let v = selectedViewController!.view
         containerView.addSubview(v)
         v.translatesAutoresizingMaskIntoConstraints = false
@@ -80,16 +77,15 @@ public class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProto
         let containerLeft = NSLayoutConstraint(item: v, attribute: .Left, relatedBy: .Equal, toItem: containerView, attribute: .Left, multiplier: 1, constant: 0)
         let containerBottom = NSLayoutConstraint(item: v, attribute: .Bottom, relatedBy: .Equal, toItem: containerView, attribute: .Bottom, multiplier: 1, constant: 0)
         let containerRight = NSLayoutConstraint(item: v, attribute: .Right, relatedBy: .Equal, toItem: containerView, attribute: .Right, multiplier: 1, constant: 0)
-        
         containerView.addConstraints([containerRight,containerBottom,containerTop, containerLeft])
         tabBar.setSelectIndex(self.selectedIndex!)
         v.layoutIfNeeded()
     }
-    
+
     public func setExtraButtons(buttons: [TBTabBarItem]) {
         self.tabBar.setExtraButtons(buttons)
     }
-    
+
     override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -98,16 +94,16 @@ public class TBVerticalTabBarController: UIViewController, TBVercicalTabBarProto
 // MARK: - Rotate
 extension TBVerticalTabBarController {
     override public func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        
     }
 }
 
 // MARK: - TabBar Delegate
 extension TBVerticalTabBarController {
+
     func tabBar(tabBar: TBVerticalTabBar, didSelectExtraButton selectedIndex: Int) {
         self.delegate?.VerticalTabBarController(self, didSelectExtralButtonIndex: selectedIndex)
     }
-    
+
     func tabBar(tabBar: TBVerticalTabBar, didSelectViewController selectedIndex: Int) {
         self.addChildViewController(self.viewControllers![selectedIndex])
         self.selectedViewController?.view.removeFromSuperview()
@@ -125,10 +121,10 @@ extension TBVerticalTabBarController {
 
 // MARK: - TBVerticalTabBarControllerDelegate
 protocol TBVerticalTabBarControllerDelegate: NSObjectProtocol {
-    
+
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
-    
+
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectViewController viewController: UIViewController)
-    
+
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectExtralButtonIndex: Int)
 }

@@ -9,5 +9,4 @@
 import UIKit
 
 public class TBTabBarItem: UITabBarItem {
-    
 }
