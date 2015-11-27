@@ -7,39 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E52B84AD1BFE2A38001F88AD /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52B84AC1BFE2A38001F88AD /* CollectionViewController.swift */; };
-		E52B84CF1BFEF4AF001F88AD /* TBTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52B84CE1BFEF4AF001F88AD /* TBTabBarItem.swift */; };
-		E5A015641BFC2126008C0E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A015631BFC2126008C0E6C /* AppDelegate.swift */; };
-		E5A015661BFC2126008C0E6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A015651BFC2126008C0E6C /* ViewController.swift */; };
-		E5A015691BFC2126008C0E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A015671BFC2126008C0E6C /* Main.storyboard */; };
-		E5A0156B1BFC2126008C0E6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5A0156A1BFC2126008C0E6C /* Assets.xcassets */; };
-		E5A0156E1BFC2126008C0E6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5A0156C1BFC2126008C0E6C /* LaunchScreen.storyboard */; };
-		E5A015771BFC2182008C0E6C /* TBVerticalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A015761BFC2182008C0E6C /* TBVerticalTabBarController.swift */; };
-		E5A015791BFC2686008C0E6C /* TBVerticalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A015781BFC2686008C0E6C /* TBVerticalTabBar.swift */; };
-		E5A0159E1BFC7FA3008C0E6C /* TBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A0159D1BFC7FA3008C0E6C /* TBTabBarButton.swift */; };
-		E5D2AC981C02AE9B005C48E8 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2AC971C02AE9B005C48E8 /* SettingViewController.swift */; };
-		E5D2AC9A1C030923005C48E8 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5D2AC991C030923005C48E8 /* TableViewController.swift */; };
+		E54E256F1C0809E80041CB3B /* TBVerticalTabBarController.h in Headers */ = {isa = PBXBuildFile; fileRef = E54E256E1C0809E80041CB3B /* TBVerticalTabBarController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E54E258A1C080CC40041CB3B /* TBVerticalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A015761BFC2182008C0E6C /* TBVerticalTabBarController.swift */; };
+		E54E258B1C080CC40041CB3B /* TBVerticalTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A015781BFC2686008C0E6C /* TBVerticalTabBar.swift */; };
+		E54E258C1C080CC40041CB3B /* TBTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A0159D1BFC7FA3008C0E6C /* TBTabBarButton.swift */; };
+		E54E258D1C080CC40041CB3B /* TBTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52B84CE1BFEF4AF001F88AD /* TBTabBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E52B84AC1BFE2A38001F88AD /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E52B84CE1BFEF4AF001F88AD /* TBTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTabBarItem.swift; sourceTree = "<group>"; };
-		E5A015601BFC2126008C0E6C /* TBVerticalTabBarController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBVerticalTabBarController.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5A015631BFC2126008C0E6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E5A015651BFC2126008C0E6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E5A015681BFC2126008C0E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E5A0156A1BFC2126008C0E6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E5A0156D1BFC2126008C0E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E54E256C1C0809E80041CB3B /* TBVerticalTabBarController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TBVerticalTabBarController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E54E256E1C0809E80041CB3B /* TBVerticalTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TBVerticalTabBarController.h; sourceTree = "<group>"; };
+		E54E25701C0809E80041CB3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5A0156F1BFC2126008C0E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5A015761BFC2182008C0E6C /* TBVerticalTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBVerticalTabBarController.swift; sourceTree = "<group>"; };
 		E5A015781BFC2686008C0E6C /* TBVerticalTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBVerticalTabBar.swift; sourceTree = "<group>"; };
 		E5A0159D1BFC7FA3008C0E6C /* TBTabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBTabBarButton.swift; sourceTree = "<group>"; };
-		E5D2AC971C02AE9B005C48E8 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
-		E5D2AC991C030923005C48E8 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E5A0155D1BFC2126008C0E6C /* Frameworks */ = {
+		E54E25681C0809E80041CB3B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,10 +36,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E54E256D1C0809E80041CB3B /* TBVerticalTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				E54E256E1C0809E80041CB3B /* TBVerticalTabBarController.h */,
+				E54E25701C0809E80041CB3B /* Info.plist */,
+			);
+			path = TBVerticalTabBarController;
+			sourceTree = "<group>";
+		};
 		E5A015571BFC2126008C0E6C = {
 			isa = PBXGroup;
 			children = (
 				E5A015621BFC2126008C0E6C /* TBVerticalTabBarController */,
+				E54E256D1C0809E80041CB3B /* TBVerticalTabBarController */,
 				E5A015611BFC2126008C0E6C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,7 +57,7 @@
 		E5A015611BFC2126008C0E6C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E5A015601BFC2126008C0E6C /* TBVerticalTabBarController.app */,
+				E54E256C1C0809E80041CB3B /* TBVerticalTabBarController.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,14 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				E5A015751BFC2131008C0E6C /* Classes */,
-				E5A015631BFC2126008C0E6C /* AppDelegate.swift */,
-				E5A015651BFC2126008C0E6C /* ViewController.swift */,
-				E52B84AC1BFE2A38001F88AD /* CollectionViewController.swift */,
-				E5D2AC991C030923005C48E8 /* TableViewController.swift */,
-				E5D2AC971C02AE9B005C48E8 /* SettingViewController.swift */,
-				E5A015671BFC2126008C0E6C /* Main.storyboard */,
-				E5A0156A1BFC2126008C0E6C /* Assets.xcassets */,
-				E5A0156C1BFC2126008C0E6C /* LaunchScreen.storyboard */,
 				E5A0156F1BFC2126008C0E6C /* Info.plist */,
 			);
 			path = TBVerticalTabBarController;
@@ -95,15 +84,26 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		E54E25691C0809E80041CB3B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E54E256F1C0809E80041CB3B /* TBVerticalTabBarController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		E5A0155F1BFC2126008C0E6C /* TBVerticalTabBarController */ = {
+		E54E256B1C0809E80041CB3B /* TBVerticalTabBarController */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5A015721BFC2126008C0E6C /* Build configuration list for PBXNativeTarget "TBVerticalTabBarController" */;
+			buildConfigurationList = E54E25711C0809E80041CB3B /* Build configuration list for PBXNativeTarget "TBVerticalTabBarController" */;
 			buildPhases = (
-				E5A0155C1BFC2126008C0E6C /* Sources */,
-				E5A0155D1BFC2126008C0E6C /* Frameworks */,
-				E5A0155E1BFC2126008C0E6C /* Resources */,
-				E56FC2441C06D5510051A418 /* ShellScript */,
+				E54E25671C0809E80041CB3B /* Sources */,
+				E54E25681C0809E80041CB3B /* Frameworks */,
+				E54E25691C0809E80041CB3B /* Headers */,
+				E54E256A1C0809E80041CB3B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -111,8 +111,8 @@
 			);
 			name = TBVerticalTabBarController;
 			productName = TBVerticalTabBarController;
-			productReference = E5A015601BFC2126008C0E6C /* TBVerticalTabBarController.app */;
-			productType = "com.apple.product-type.application";
+			productReference = E54E256C1C0809E80041CB3B /* TBVerticalTabBarController.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -124,7 +124,7 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = HarriesChen;
 				TargetAttributes = {
-					E5A0155F1BFC2126008C0E6C = {
+					E54E256B1C0809E80041CB3B = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
 				};
@@ -142,79 +142,76 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E5A0155F1BFC2126008C0E6C /* TBVerticalTabBarController */,
+				E54E256B1C0809E80041CB3B /* TBVerticalTabBarController */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E5A0155E1BFC2126008C0E6C /* Resources */ = {
+		E54E256A1C0809E80041CB3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5A0156E1BFC2126008C0E6C /* LaunchScreen.storyboard in Resources */,
-				E5A0156B1BFC2126008C0E6C /* Assets.xcassets in Resources */,
-				E5A015691BFC2126008C0E6C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		E56FC2441C06D5510051A418 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ $USER = \"travis\" ] ; then\necho \"CI\"\nelse\nswiftlint\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		E5A0155C1BFC2126008C0E6C /* Sources */ = {
+		E54E25671C0809E80041CB3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E52B84AD1BFE2A38001F88AD /* CollectionViewController.swift in Sources */,
-				E5A015661BFC2126008C0E6C /* ViewController.swift in Sources */,
-				E5A015791BFC2686008C0E6C /* TBVerticalTabBar.swift in Sources */,
-				E5D2AC981C02AE9B005C48E8 /* SettingViewController.swift in Sources */,
-				E5A0159E1BFC7FA3008C0E6C /* TBTabBarButton.swift in Sources */,
-				E5A015771BFC2182008C0E6C /* TBVerticalTabBarController.swift in Sources */,
-				E5A015641BFC2126008C0E6C /* AppDelegate.swift in Sources */,
-				E5D2AC9A1C030923005C48E8 /* TableViewController.swift in Sources */,
-				E52B84CF1BFEF4AF001F88AD /* TBTabBarItem.swift in Sources */,
+				E54E258A1C080CC40041CB3B /* TBVerticalTabBarController.swift in Sources */,
+				E54E258B1C080CC40041CB3B /* TBVerticalTabBar.swift in Sources */,
+				E54E258C1C080CC40041CB3B /* TBTabBarButton.swift in Sources */,
+				E54E258D1C080CC40041CB3B /* TBTabBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		E5A015671BFC2126008C0E6C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E5A015681BFC2126008C0E6C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E5A0156C1BFC2126008C0E6C /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E5A0156D1BFC2126008C0E6C /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
+		E54E25721C0809E80041CB3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TBVerticalTabBarController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrieschen.TBVerticalTabBarController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E54E25731C0809E80041CB3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = TBVerticalTabBarController/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.harrieschen.TBVerticalTabBarController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E5A015701BFC2126008C0E6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -298,45 +295,22 @@
 			};
 			name = Release;
 		};
-		E5A015731BFC2126008C0E6C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TBVerticalTabBarController/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.harrieschen.TBVerticalTabBarController;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		E5A015741BFC2126008C0E6C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = TBVerticalTabBarController/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.harrieschen.TBVerticalTabBarController;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E54E25711C0809E80041CB3B /* Build configuration list for PBXNativeTarget "TBVerticalTabBarController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E54E25721C0809E80041CB3B /* Debug */,
+				E54E25731C0809E80041CB3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E5A0155B1BFC2126008C0E6C /* Build configuration list for PBXProject "TBVerticalTabBarController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E5A015701BFC2126008C0E6C /* Debug */,
 				E5A015711BFC2126008C0E6C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E5A015721BFC2126008C0E6C /* Build configuration list for PBXNativeTarget "TBVerticalTabBarController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E5A015731BFC2126008C0E6C /* Debug */,
-				E5A015741BFC2126008C0E6C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

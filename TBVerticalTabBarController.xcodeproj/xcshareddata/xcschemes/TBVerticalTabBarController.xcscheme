@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E5A0155F1BFC2126008C0E6C"
-               BuildableName = "TBVerticalTabBarController.app"
+               BlueprintIdentifier = "E54E256B1C0809E80041CB3B"
+               BuildableName = "TBVerticalTabBarController.framework"
                BlueprintName = "TBVerticalTabBarController"
                ReferencedContainer = "container:TBVerticalTabBarController.xcodeproj">
             </BuildableReference>
@@ -32,8 +32,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E5A0155F1BFC2126008C0E6C"
-            BuildableName = "TBVerticalTabBarController.app"
+            BlueprintIdentifier = "E54E256B1C0809E80041CB3B"
+            BuildableName = "TBVerticalTabBarController.framework"
             BlueprintName = "TBVerticalTabBarController"
             ReferencedContainer = "container:TBVerticalTabBarController.xcodeproj">
          </BuildableReference>
@@ -55,8 +55,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E5A0155F1BFC2126008C0E6C"
-            BuildableName = "TBVerticalTabBarController.app"
+            BlueprintIdentifier = "E54E256B1C0809E80041CB3B"
+            BuildableName = "TBVerticalTabBarController.framework"
             BlueprintName = "TBVerticalTabBarController"
             ReferencedContainer = "container:TBVerticalTabBarController.xcodeproj">
          </BuildableReference>
@@ -74,8 +74,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E5A0155F1BFC2126008C0E6C"
-            BuildableName = "TBVerticalTabBarController.app"
+            BlueprintIdentifier = "E54E256B1C0809E80041CB3B"
+            BuildableName = "TBVerticalTabBarController.framework"
             BlueprintName = "TBVerticalTabBarController"
             ReferencedContainer = "container:TBVerticalTabBarController.xcodeproj">
          </BuildableReference>

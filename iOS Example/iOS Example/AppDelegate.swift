@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  TBVerticalTabBarController
+//  iOS Example
 //
-//  Created by ChenHao on 11/18/15.
+//  Created by ChenHao on 11/27/15.
 //  Copyright © 2015 HarriesChen. All rights reserved.
 //
 
@@ -12,6 +12,8 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let tabbarcontroller: TBVerticalTabBarController = TBVerticalTabBarController()
         // swiftlint:disable force_cast
@@ -64,21 +66,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+
 }
-
 extension AppDelegate: TBVerticalTabBarControllerDelegate {
-
+    
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectExtralButtonIndex: Int) {
         let setting = SettingViewController()
         let nav = UINavigationController(rootViewController: setting)
         nav.modalPresentationStyle = .FormSheet
         self.window?.rootViewController?.presentViewController(nav, animated: true, completion: nil)
     }
-
+    
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, didSelectViewController viewController: UIViewController) {
     }
-
+    
     func VerticalTabBarController(tabBarController: TBVerticalTabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         return true
     }
 }
+
