@@ -172,7 +172,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = swiftlint;
+			shellScript = "if [ $CI = true ] ; then\nswiftlint\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
