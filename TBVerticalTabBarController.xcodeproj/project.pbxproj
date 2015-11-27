@@ -172,7 +172,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $USER = \"travis\" ] ; then\necho \"CI\\\"\nelse\nswiftlint\nfi";
+			shellScript = "if [ $USER = \"travis\" ] ; then\necho \"CI\"\nelse\nswiftlint\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
